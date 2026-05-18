@@ -36,11 +36,22 @@ int hal_can_read(uint8_t frame[64]) {
 // ---- terminal dashboard ---------------------------------------------------
 
 static const char *zone_names[] = {
-    "Front-Left ", "Front-Right", "Rear-Left  ", "Rear-Right ",
-    "Footwell-L ", "Footwell-R ", "Instrument ", "Roof-Front ",
-    "Roof-Mid   ", "Roof-Rear  ", "Ambient    ",
+    // 流水灯
+    "IP-Flow-1  ", "IP-Flow-2  ", "IP-Flow-3  ",
+    // 仪表高位
+    "IP-H1      ", "IP-H2      ", "IP-H3      ",
+    "IP-H4      ", "IP-H5      ", "IP-H6      ",
+    // 左前门
+    "LF-Foot    ", "LF-Map     ", "LF-Up-A    ", "LF-Up-B    ", "LF-Spk     ",
+    // 左后门
+    "LR-Foot    ", "LR-Map     ", "LR-Up-A    ", "LR-Up-B    ",
+    // 右前门
+    "RF-Foot    ", "RF-Map     ", "RF-Up-A    ", "RF-Up-B    ", "RF-Spk     ",
+    // 右后门
+    "RR-Foot    ", "RR-Map     ", "RR-Up-A    ", "RR-Up-B    ",
+    // 中控
+    "Center     ",
 };
-
 static const char *state_names[] = {
     "IDLE", "ACTIVE", "SHADOWED"
 };
@@ -62,7 +73,7 @@ void hal_led_send(const LedOutput *out) {
     printf("┌──────────────────────────────────────────────────────────────────┐\n");
     printf("│         ALC Effect Scheduler  —  PC Simulator                   │\n");
     printf("├──────────────────────────────────────────────────────────────────┤\n");
-    printf("│  LED Zones  (MAX_ZONES=%d)                                      │\n", MAX_ZONES);
+    printf("│  LED Zones  (ZONE_COUNT=%d)                                      │\n", ZONE_COUNT);
     for (int z = 0; z < ZONE_COUNT; z++) {
         const ZoneLayout *zl = &g_zone_layout[z];
         LedPixel p = out->pixels[zl->offset];  // 显示每个 zone 的第一个像素
@@ -72,8 +83,8 @@ void hal_led_send(const LedOutput *out) {
         else
             printf("     ");
         printf("  ");
-        bar_rgb(p.r, p.g, p.b, p.brightness);
-        printf("  R:%3d G:%3d B:%3d br:%3d  │\n", p.r, p.g, p.b, p.brightness);
+        bar_rgb(p.r, p.g, p.b, p.l);
+        printf("  R:%3d G:%3d B:%3d l:%3d  │\n", p.r, p.g, p.b, p.l);
     }
 
     // ---- active effects ----

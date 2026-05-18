@@ -1,33 +1,116 @@
 #include "can_sim.h"
+#include "can_frames.h"
 #include <string.h>
 
-// CAN FD frame format (simulated):
-//   bytes 0..3  -> CAN ID  (uint32 LE)
-//   bytes 4..63 -> payload (60 bytes)
+// ============================================================================
+// CAN 模拟器 — 使用 CanFrame 位域构造真实 0x2CF 帧
+// ============================================================================
+// 演示场景: Welcome → RunningLight1 → FootwellPulse → RunningLight2 → RearAlert
 
 typedef struct {
-    uint32_t at_ms;
-    uint32_t can_id;
-    uint8_t  data[60];
+    uint32_t       at_ms;
+    void          (*build)(CanFrame *f);
 } Step;
 
-// 演示场景 —— 展示 zone 级仲裁:
-//   t=500:  rl1 激活 (pri=5, roof front+mid, cyan)
-//   t=2500: rl2 激活 (pri=6, roof mid+rear, orange)
-//           → rl2 抢走 Z_ROOF_MID，rl1 只剩 Z_ROOF_FRONT
-// 关键观察: 车顶中段从 cyan 变成 orange 的那一刻
+// ---- 各步骤的帧构造函数 ----------------------------------------------------
+
+static void build_ambient(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;   // 上电
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 0;   // 默认主题
+}
+
+static void build_rl1_on(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 1;   // 主题 1 → rl1
+}
+
+static void build_welcome_on(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 1;
+    f->canfd_0x2cf.VIU_AL_Welcome     = 1;   // 迎宾激活
+}
+
+static void build_fp_on(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 3;   // 主题 3 → footwell_pulse
+    f->canfd_0x2cf.VIU_AL_Welcome     = 1;
+}
+
+static void build_rl2_on(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 2;   // 主题 2 → rl2  ← 此时主题切到2，rl1/fp应停
+    f->canfd_0x2cf.VIU_AL_Welcome     = 1;
+}
+
+static void build_rear_on(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 2;
+    f->canfd_0x2cf.VIU_AL_Welcome     = 1;
+    f->canfd_0x2cf.VIU_AL_RearWarn    = 1;   // 后雷达告警激活
+}
+
+static void build_rear_off(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 2;
+    f->canfd_0x2cf.VIU_AL_Welcome     = 1;
+    f->canfd_0x2cf.VIU_AL_RearWarn    = 0;   // 后雷达告警解除
+}
+
+static void build_welcome_off(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_AtmThemeMod = 2;
+    f->canfd_0x2cf.VIU_AL_Welcome     = 0;   // 迎宾结束
+}
+
+static void build_all_off(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    // 全部清零 = 只剩 ambient
+}
+
+static void build_rear_again(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 1;
+    f->canfd_0x2cf.VIU_AL_RearWarn    = 1;
+}
+
+static void build_power_off(CanFrame *f) {
+    memset(f, 0, sizeof(CanFrame));
+    f->id = 0x2CF;
+    f->canfd_0x2cf.VIU_AL_PowerSt    = 0;   // 断电，全部关
+}
+
+// ---- 场景时间线 ------------------------------------------------------------
 static const Step scenario[] = {
-    {    0, 0x400, {0x00} },  // mode 0 → ambient
-    {  500, 0x400, {0x01} },  // mode 1 → rl1 ON (cyan, front+mid)
-    { 1000, 0x100, {0x00, 0x01} },                               // door 0 open → welcome ON
-    { 2500, 0x400, {0x02} },  // mode 2 → rl2 ON (orange, mid+rear) ← 抢走中段!
-    { 4500, 0x200, {0x00, 0x00,0x00,0xA0,0x40} },                // rear alert ON
-    { 7000, 0x200, {0x00, 0x00,0x00,0x00,0x00} },                // rear alert OFF
-    { 9000, 0x400, {0x01} },  // mode 1 → rl1 OFF
-    {11000, 0x100, {0x00, 0x00} },                               // door 0 close → welcome OFF
-    {14000, 0x400, {0x02} },  // mode 2 → rl2 OFF
-    {17000, 0x200, {0x01, 0x00,0x00,0x60,0x41} },                // rear alert again
-    {20000, 0x200, {0x01, 0x00,0x00,0x00,0x00} },                // rear alert OFF
+    {    0, build_ambient },      // 上电 → ambient 激活
+    {  500, build_rl1_on },       // 主题1 → rl1 cyan 流水
+    { 1000, build_welcome_on },   // 开门 → welcome 蓝色呼吸
+    { 1800, build_fp_on },        // 主题3 → footwell_pulse 琥珀呼吸
+    { 2500, build_rl2_on },       // 主题2 → rl2 orange 流水, rl1/fp 停
+    { 4500, build_rear_on },      // 雷达告警 → rear_alert 红色闪烁(最高优先)
+    { 7000, build_rear_off },     // 雷达解除 → rear_alert 停
+    { 9000, build_welcome_off },  // 关门 → welcome 停
+    {11000, build_all_off },      // 主题归零 → rl2 停
+    {14000, build_rear_again },   // 雷达再次触发
+    {17000, build_power_off },    // 断电 → 全部停
 };
 
 static int step_count = sizeof(scenario) / sizeof(scenario[0]);
@@ -40,10 +123,9 @@ void can_sim_init(void) {
 int can_sim_poll(uint32_t elapsed_ms, uint8_t frame[64]) {
     if (step_idx >= step_count) return 0;
     if (elapsed_ms >= scenario[step_idx].at_ms) {
-        memset(frame, 0, 64);
-        uint32_t id = scenario[step_idx].can_id;
-        memcpy(frame, &id, 4);
-        memcpy(frame + 4, scenario[step_idx].data, 60);
+        CanFrame f;
+        scenario[step_idx].build(&f);
+        memcpy(frame, f.raw, 64);
         step_idx++;
         return 1;
     }

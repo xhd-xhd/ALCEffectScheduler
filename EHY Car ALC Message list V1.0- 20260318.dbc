@@ -1,0 +1,950 @@
+VERSION ""
+
+
+NS_ : 
+        NS_DESC_
+        CM_
+        BA_DEF_
+        BA_
+        VAL_
+        CAT_DEF_
+        CAT_
+        FILTER
+        BA_DEF_DEF_
+        EV_DATA_
+        ENVVAR_DATA_
+        SGTYPE_
+        SGTYPE_VAL_
+        BA_DEF_SGTYPE_
+        BA_SGTYPE_
+        SIG_TYPE_REF_
+        VAL_TABLE_
+        SIG_GROUP_
+        SIG_VALTYPE_
+        SIGTYPE_VALTYPE_
+        BO_TX_BU_
+        BA_DEF_REL_
+        BA_REL_
+        BA_DEF_DEF_REL_
+        BU_SG_REL_
+        BU_EV_REL_
+        BU_BO_REL_
+        SG_MUL_VAL_
+
+BS_:
+
+BU_: ALC 
+
+
+BO_ 2015 Diag_FuncReq: 64 Vector__XXX
+ SG_ Diag_FuncReq_Data : 7|64@0+ (1,0) [0|0] ""  ALC
+
+BO_ 719 VIU_ALCtrl: 32 Vector__XXX
+ SG_ VIU_AL_CeilingLampColorSet_Red : 7|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_CeilingLampColorSet_Green : 15|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_CeilingLampColorSet_Blue : 23|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_CeilingLampBriSet : 30|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_CeilingLampBriModSet : 31|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HiLampColorSet_Red : 39|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HiLampColorSet_Green : 47|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HiLampColorSet_Blue : 55|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HiLampBriSet : 62|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HiLampBriModSet : 63|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_NeutLampColorSet_Red : 71|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_NeutLampColorSet_Green : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_NeutLampColorSet_Blue : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_NeutLampBriSet : 94|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_NeutLampBriModSet : 95|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_FootLampColorSet_Red : 103|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_FootLampColorSet_Green : 111|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_FootLampColorSet_Blue : 119|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_FootLampBriSet : 126|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_FootLampBriModSet : 127|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_AtmThemeMod : 131|4@0+ (1,0) [0|15] ""  ALC
+ SG_ VIU_AL_NapMod : 135|4@0+ (1,0) [0|15] ""  ALC
+ SG_ VIU_AL_FLAC : 137|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_FRAC : 139|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_RLAC : 141|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_RRAC : 143|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_FragranceMotion : 147|4@0+ (1,0) [0|15] ""  ALC
+ SG_ VIU_AL_VoiceInteractIndcrSt : 151|4@0+ (1,0) [0|15] ""  ALC
+ SG_ VIU_AL_VoiceInteractIndcrArea : 157|3@0+ (1,0) [0|7] ""  ALC
+ SG_ VIU_AL_StartMotion : 159|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_RearWarn : 161|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_DoorWarn : 163|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_DrivingMod : 167|4@0+ (1,0) [0|15] ""  ALC
+ SG_ VIU_AL_PowerSt : 170|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_Welcome : 175|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_DayNightSt : 179|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_FLDoorWarn : 199|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_FRDoorWarn : 197|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_RLDoorWarn : 195|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_RRDoorWarn : 193|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_TwetterLampEnable : 207|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_VideoAmbLiAreaFL : 205|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_VideoAmbLiAreaFR : 204|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_VideoAmbLiAreaML : 203|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_VideoAmbLiAreaMR : 202|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_VideoAmbLiAreaRL : 201|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_VideoAmbLiAreaRR : 200|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_VideoAmbLiColorSet_Red : 215|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_VideoAmbLiColorSet_Green : 223|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_VideoAmbLiColorSet_Blue : 231|8@0+ (1,0) [0|255] ""  ALC
+
+BO_ 718 AL_ALSts: 32 ALC
+ SG_ AL_VIU_Faultfeedback : 3|4@0+ (1,0) [0|15] ""  Vector__XXX
+ SG_ AL_VIU_AtmThemeMod : 7|4@0+ (1,0) [0|15] ""  Vector__XXX
+
+BO_ 489 VIU_ALMusicFollowCtrl1: 64 Vector__XXX
+ SG_ VIU_AL_PreDishesArea1 : 7|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod1 : 9|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R1 : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G1 : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B1 : 95|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet1 : 102|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet1 : 103|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea2 : 111|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod2 : 113|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R2 : 183|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G2 : 191|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B2 : 199|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet2 : 206|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet2 : 207|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea3 : 215|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod3 : 217|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R3 : 287|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G3 : 295|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B3 : 303|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet3 : 310|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet3 : 311|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea4 : 319|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod4 : 321|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R4 : 391|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G4 : 399|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B4 : 407|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet4 : 414|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet4 : 415|1@0+ (1,0) [0|1] ""  ALC
+
+BO_ 490 VIU_ALMusicFollowCtrl2: 64 Vector__XXX
+ SG_ VIU_AL_PreDishesArea5 : 7|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod5 : 9|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R5 : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G5 : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B5 : 95|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet5 : 102|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet5 : 103|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea6 : 111|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod6 : 113|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R6 : 183|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G6 : 191|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B6 : 199|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet6 : 206|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet6 : 207|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea7 : 215|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod7 : 217|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R7 : 287|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G7 : 295|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B7 : 303|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet7 : 310|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet7 : 311|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea8 : 319|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod8 : 321|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R8 : 391|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G8 : 399|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B8 : 407|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet8 : 414|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet8 : 415|1@0+ (1,0) [0|1] ""  ALC
+
+BO_ 491 VIU_ALMusicFollowCtrl3: 64 Vector__XXX
+ SG_ VIU_AL_PreDishesArea9 : 7|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod9 : 9|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R9 : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G9 : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B9 : 95|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet9 : 102|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet9 : 103|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea10 : 111|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod10 : 113|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R10 : 183|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G10 : 191|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B10 : 199|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet10 : 206|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet10 : 207|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea11 : 215|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod11 : 217|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R11 : 287|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G11 : 295|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B11 : 303|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet11 : 310|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet11 : 311|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea12 : 319|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod12 : 321|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R12 : 391|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G12 : 399|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B12 : 407|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet12 : 414|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet12 : 415|1@0+ (1,0) [0|1] ""  ALC
+
+BO_ 492 VIU_ALMusicFollowCtrl4: 64 Vector__XXX
+ SG_ VIU_AL_PreDishesArea13 : 7|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod13 : 9|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R13 : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G13 : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B13 : 95|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet13 : 102|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet13 : 103|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea14 : 111|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod14 : 113|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R14 : 183|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G14 : 191|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B14 : 199|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet14 : 206|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet14 : 207|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea15 : 215|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod15 : 217|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R15 : 287|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G15 : 295|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B15 : 303|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet15 : 310|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet15 : 311|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea16 : 319|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod16 : 321|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R16 : 391|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G16 : 399|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B16 : 407|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet16 : 414|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet16 : 415|1@0+ (1,0) [0|1] ""  ALC
+
+BO_ 493 VIU_ALMusicFollowCtrl5: 64 Vector__XXX
+ SG_ VIU_AL_PreDishesArea17 : 7|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod17 : 9|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R17 : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G17 : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B17 : 95|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet17 : 102|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet17 : 103|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea18 : 111|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod18 : 113|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R18 : 183|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G18 : 191|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B18 : 199|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet18 : 206|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet18 : 207|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_PreDishesArea19 : 215|5@0+ (1,0) [0|31] ""  ALC
+ SG_ VIU_AL_PreDishesMod19 : 217|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_ColorSet_R19 : 287|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_G19 : 295|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_ColorSet_B19 : 303|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_BriSet19 : 310|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_BriModSet19 : 311|1@0+ (1,0) [0|1] ""  ALC
+
+BO_ 494 VIU_ALMusicFollowCtrl6: 64 Vector__XXX
+ SG_ VIU_AL_HLPreDishesMod : 1|2@0+ (1,0) [0|3] ""  ALC
+ SG_ VIU_AL_HLColorSet_R1 : 15|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G1 : 23|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B1 : 31|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_1 : 38|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_1 : 39|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HLColorSet_R2 : 47|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G2 : 55|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B2 : 63|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_2 : 70|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_2 : 71|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HLColorSet_R3 : 79|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G3 : 87|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B3 : 95|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_3 : 102|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_3 : 103|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HLColorSet_R4 : 111|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G4 : 119|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B4 : 127|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_4 : 134|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_4 : 135|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HLColorSet_R5 : 143|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G5 : 151|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B5 : 159|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_5 : 166|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_5 : 167|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HLColorSet_R6 : 175|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G6 : 183|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B6 : 191|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_6 : 198|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_6 : 199|1@0+ (1,0) [0|1] ""  ALC
+ SG_ VIU_AL_HLColorSet_R7 : 207|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_G7 : 215|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLColorSet_B7 : 223|8@0+ (1,0) [0|255] ""  ALC
+ SG_ VIU_AL_HLBriSet_7 : 230|7@0+ (1,0) [0|100] "%"  ALC
+ SG_ VIU_AL_HLBriModSet_7 : 231|1@0+ (1,0) [0|1] ""  ALC
+
+BO_ 1850 Diag_PhyReq_ALC: 64 Vector__XXX
+ SG_ Diag_PhyReq_ALC_Data : 7|4@0+ (1,0) [0|15] ""  ALC
+
+BO_ 1978 Diag_Resp_ALC: 64 ALC
+ SG_ Diag_Resp_ALC_Data : 7|4@0+ (1,0) [0|15] ""  Vector__XXX
+
+
+CM_ "Version:V1.0,Date:2026.03.18,Author:XingChe,Review:WeiJiang,Approval:HongfanBai,Description:(first version);
+ ";
+
+CM_ SG_ 2015 Diag_FuncReq_Data "诊断信号长度可根据诊断需求调整";
+CM_ SG_ 719 VIU_AL_CeilingLampColorSet_Red "地图袋颜色设置_红色";
+CM_ SG_ 719 VIU_AL_CeilingLampColorSet_Green "地图袋颜色设置_绿色";
+CM_ SG_ 719 VIU_AL_CeilingLampColorSet_Blue "地图袋颜色设置_蓝色";
+CM_ SG_ 719 VIU_AL_CeilingLampBriSet "地图袋亮度设置";
+CM_ SG_ 719 VIU_AL_CeilingLampBriModSet "地图袋亮度模式设置";
+CM_ SG_ 719 VIU_AL_HiLampColorSet_Red "高位灯颜色设置_红色";
+CM_ SG_ 719 VIU_AL_HiLampColorSet_Green "高位灯颜色设置_绿色";
+CM_ SG_ 719 VIU_AL_HiLampColorSet_Blue "高位灯颜色设置_蓝色";
+CM_ SG_ 719 VIU_AL_HiLampBriSet "高位灯亮度设置";
+CM_ SG_ 719 VIU_AL_HiLampBriModSet "高位灯亮度模式设置";
+CM_ SG_ 719 VIU_AL_NeutLampColorSet_Red "中位灯颜色设置_红色";
+CM_ SG_ 719 VIU_AL_NeutLampColorSet_Green "中位灯颜色设置_绿色";
+CM_ SG_ 719 VIU_AL_NeutLampColorSet_Blue "中位灯颜色设置_蓝色";
+CM_ SG_ 719 VIU_AL_NeutLampBriSet "中位灯亮度设置";
+CM_ SG_ 719 VIU_AL_NeutLampBriModSet "中位灯亮度模式设置";
+CM_ SG_ 719 VIU_AL_FootLampColorSet_Red "照脚灯颜色设置_红色";
+CM_ SG_ 719 VIU_AL_FootLampColorSet_Green "照脚灯颜色设置_绿色";
+CM_ SG_ 719 VIU_AL_FootLampColorSet_Blue "照脚灯颜色设置_蓝色";
+CM_ SG_ 719 VIU_AL_FootLampBriSet "照脚灯亮度设置";
+CM_ SG_ 719 VIU_AL_FootLampBriModSet "照脚灯亮度模式设置";
+CM_ SG_ 719 VIU_AL_AtmThemeMod "氛围主题模式";
+CM_ SG_ 719 VIU_AL_NapMod "小憩模式灯语";
+CM_ SG_ 719 VIU_AL_FLAC "左前空调调温灯语";
+CM_ SG_ 719 VIU_AL_FRAC "右前空调调温灯语";
+CM_ SG_ 719 VIU_AL_RLAC "左后空调调温灯语";
+CM_ SG_ 719 VIU_AL_RRAC "右后空调调温灯语";
+CM_ SG_ 719 VIU_AL_FragranceMotion "香氛切换灯语";
+CM_ SG_ 719 VIU_AL_VoiceInteractIndcrSt "语音交互灯语状态";
+CM_ SG_ 719 VIU_AL_VoiceInteractIndcrArea "语音交互灯语位置";
+CM_ SG_ 719 VIU_AL_StartMotion "启动动效灯语";
+CM_ SG_ 719 VIU_AL_RearWarn "后向来车预警灯语";
+CM_ SG_ 719 VIU_AL_DoorWarn "门开提醒灯语";
+CM_ SG_ 719 VIU_AL_DrivingMod "驾驶模式切换灯语";
+CM_ SG_ 719 VIU_AL_PowerSt "氛围灯供电状态";
+CM_ SG_ 719 VIU_AL_Welcome "迎宾灯语";
+CM_ SG_ 719 VIU_AL_DayNightSt "白天黑夜状态";
+CM_ SG_ 719 VIU_AL_FLDoorWarn "左前门开提醒灯语";
+CM_ SG_ 719 VIU_AL_FRDoorWarn "右前门开提醒灯语";
+CM_ SG_ 719 VIU_AL_RLDoorWarn "左后门开提醒灯语";
+CM_ SG_ 719 VIU_AL_RRDoorWarn "右后门开提醒灯语";
+CM_ SG_ 719 VIU_AL_TwetterLampEnable "施罗德氛围灯使能控制";
+CM_ SG_ 719 VIU_AL_VideoAmbLiAreaFL "光随影动区域左前";
+CM_ SG_ 719 VIU_AL_VideoAmbLiAreaFR "光随影动区域右前";
+CM_ SG_ 719 VIU_AL_VideoAmbLiAreaML "光随影动区域左中";
+CM_ SG_ 719 VIU_AL_VideoAmbLiAreaMR "光随影动区域右中";
+CM_ SG_ 719 VIU_AL_VideoAmbLiAreaRL "光随影动区域左后";
+CM_ SG_ 719 VIU_AL_VideoAmbLiAreaRR "光随影动区域右后";
+CM_ SG_ 719 VIU_AL_VideoAmbLiColorSet_Red "光随影动颜色设置-R";
+CM_ SG_ 719 VIU_AL_VideoAmbLiColorSet_Green "光随影动颜色设置-G";
+CM_ SG_ 719 VIU_AL_VideoAmbLiColorSet_Blue "光随影动颜色设置-B";
+CM_ SG_ 718 AL_VIU_Faultfeedback "AL故障反馈";
+CM_ SG_ 718 AL_VIU_AtmThemeMod "氛围主题模式";
+CM_ SG_ 489 VIU_AL_PreDishesArea1 "预制菜位置";
+CM_ SG_ 489 VIU_AL_PreDishesMod1 "预制菜模式";
+CM_ SG_ 489 VIU_AL_ColorSet_R1 "颜色设置-R";
+CM_ SG_ 489 VIU_AL_ColorSet_G1 "颜色设置-G";
+CM_ SG_ 489 VIU_AL_ColorSet_B1 "颜色设置-B";
+CM_ SG_ 489 VIU_AL_BriSet1 "亮度设置";
+CM_ SG_ 489 VIU_AL_BriModSet1 "亮度模式设置";
+CM_ SG_ 489 VIU_AL_PreDishesArea2 "预制菜位置";
+CM_ SG_ 489 VIU_AL_PreDishesMod2 "预制菜模式";
+CM_ SG_ 489 VIU_AL_ColorSet_R2 "颜色设置-R";
+CM_ SG_ 489 VIU_AL_ColorSet_G2 "颜色设置-G";
+CM_ SG_ 489 VIU_AL_ColorSet_B2 "颜色设置-B";
+CM_ SG_ 489 VIU_AL_BriSet2 "亮度设置";
+CM_ SG_ 489 VIU_AL_BriModSet2 "亮度模式设置";
+CM_ SG_ 489 VIU_AL_PreDishesArea3 "预制菜位置";
+CM_ SG_ 489 VIU_AL_PreDishesMod3 "预制菜模式";
+CM_ SG_ 489 VIU_AL_ColorSet_R3 "颜色设置-R";
+CM_ SG_ 489 VIU_AL_ColorSet_G3 "颜色设置-G";
+CM_ SG_ 489 VIU_AL_ColorSet_B3 "颜色设置-B";
+CM_ SG_ 489 VIU_AL_BriSet3 "亮度设置";
+CM_ SG_ 489 VIU_AL_BriModSet3 "亮度模式设置";
+CM_ SG_ 489 VIU_AL_PreDishesArea4 "预制菜位置";
+CM_ SG_ 489 VIU_AL_PreDishesMod4 "预制菜模式";
+CM_ SG_ 489 VIU_AL_ColorSet_R4 "颜色设置-R";
+CM_ SG_ 489 VIU_AL_ColorSet_G4 "颜色设置-G";
+CM_ SG_ 489 VIU_AL_ColorSet_B4 "颜色设置-B";
+CM_ SG_ 489 VIU_AL_BriSet4 "亮度设置";
+CM_ SG_ 489 VIU_AL_BriModSet4 "亮度模式设置";
+CM_ SG_ 490 VIU_AL_PreDishesArea5 "预制菜位置";
+CM_ SG_ 490 VIU_AL_PreDishesMod5 "预制菜模式";
+CM_ SG_ 490 VIU_AL_ColorSet_R5 "颜色设置-R";
+CM_ SG_ 490 VIU_AL_ColorSet_G5 "颜色设置-G";
+CM_ SG_ 490 VIU_AL_ColorSet_B5 "颜色设置-B";
+CM_ SG_ 490 VIU_AL_BriSet5 "亮度设置";
+CM_ SG_ 490 VIU_AL_BriModSet5 "亮度模式设置";
+CM_ SG_ 490 VIU_AL_PreDishesArea6 "预制菜位置";
+CM_ SG_ 490 VIU_AL_PreDishesMod6 "预制菜模式";
+CM_ SG_ 490 VIU_AL_ColorSet_R6 "颜色设置-R";
+CM_ SG_ 490 VIU_AL_ColorSet_G6 "颜色设置-G";
+CM_ SG_ 490 VIU_AL_ColorSet_B6 "颜色设置-B";
+CM_ SG_ 490 VIU_AL_BriSet6 "亮度设置";
+CM_ SG_ 490 VIU_AL_BriModSet6 "亮度模式设置";
+CM_ SG_ 490 VIU_AL_PreDishesArea7 "预制菜位置";
+CM_ SG_ 490 VIU_AL_PreDishesMod7 "预制菜模式";
+CM_ SG_ 490 VIU_AL_ColorSet_R7 "颜色设置-R";
+CM_ SG_ 490 VIU_AL_ColorSet_G7 "颜色设置-G";
+CM_ SG_ 490 VIU_AL_ColorSet_B7 "颜色设置-B";
+CM_ SG_ 490 VIU_AL_BriSet7 "亮度设置";
+CM_ SG_ 490 VIU_AL_BriModSet7 "亮度模式设置";
+CM_ SG_ 490 VIU_AL_PreDishesArea8 "预制菜位置";
+CM_ SG_ 490 VIU_AL_PreDishesMod8 "预制菜模式";
+CM_ SG_ 490 VIU_AL_ColorSet_R8 "颜色设置-R";
+CM_ SG_ 490 VIU_AL_ColorSet_G8 "颜色设置-G";
+CM_ SG_ 490 VIU_AL_ColorSet_B8 "颜色设置-B";
+CM_ SG_ 490 VIU_AL_BriSet8 "亮度设置";
+CM_ SG_ 490 VIU_AL_BriModSet8 "亮度模式设置";
+CM_ SG_ 491 VIU_AL_PreDishesArea9 "预制菜位置";
+CM_ SG_ 491 VIU_AL_PreDishesMod9 "预制菜模式";
+CM_ SG_ 491 VIU_AL_ColorSet_R9 "颜色设置-R";
+CM_ SG_ 491 VIU_AL_ColorSet_G9 "颜色设置-G";
+CM_ SG_ 491 VIU_AL_ColorSet_B9 "颜色设置-B";
+CM_ SG_ 491 VIU_AL_BriSet9 "亮度设置";
+CM_ SG_ 491 VIU_AL_BriModSet9 "亮度模式设置";
+CM_ SG_ 491 VIU_AL_PreDishesArea10 "预制菜位置";
+CM_ SG_ 491 VIU_AL_PreDishesMod10 "预制菜模式";
+CM_ SG_ 491 VIU_AL_ColorSet_R10 "颜色设置-R";
+CM_ SG_ 491 VIU_AL_ColorSet_G10 "颜色设置-G";
+CM_ SG_ 491 VIU_AL_ColorSet_B10 "颜色设置-B";
+CM_ SG_ 491 VIU_AL_BriSet10 "亮度设置";
+CM_ SG_ 491 VIU_AL_BriModSet10 "亮度模式设置";
+CM_ SG_ 491 VIU_AL_PreDishesArea11 "预制菜位置";
+CM_ SG_ 491 VIU_AL_PreDishesMod11 "预制菜模式";
+CM_ SG_ 491 VIU_AL_ColorSet_R11 "颜色设置-R";
+CM_ SG_ 491 VIU_AL_ColorSet_G11 "颜色设置-G";
+CM_ SG_ 491 VIU_AL_ColorSet_B11 "颜色设置-B";
+CM_ SG_ 491 VIU_AL_BriSet11 "亮度设置";
+CM_ SG_ 491 VIU_AL_BriModSet11 "亮度模式设置";
+CM_ SG_ 491 VIU_AL_PreDishesArea12 "预制菜位置";
+CM_ SG_ 491 VIU_AL_PreDishesMod12 "预制菜模式";
+CM_ SG_ 491 VIU_AL_ColorSet_R12 "颜色设置-R";
+CM_ SG_ 491 VIU_AL_ColorSet_G12 "颜色设置-G";
+CM_ SG_ 491 VIU_AL_ColorSet_B12 "颜色设置-B";
+CM_ SG_ 491 VIU_AL_BriSet12 "亮度设置";
+CM_ SG_ 491 VIU_AL_BriModSet12 "亮度模式设置";
+CM_ SG_ 492 VIU_AL_PreDishesArea13 "预制菜位置";
+CM_ SG_ 492 VIU_AL_PreDishesMod13 "预制菜模式";
+CM_ SG_ 492 VIU_AL_ColorSet_R13 "颜色设置-R";
+CM_ SG_ 492 VIU_AL_ColorSet_G13 "颜色设置-G";
+CM_ SG_ 492 VIU_AL_ColorSet_B13 "颜色设置-B";
+CM_ SG_ 492 VIU_AL_BriSet13 "亮度设置";
+CM_ SG_ 492 VIU_AL_BriModSet13 "亮度模式设置";
+CM_ SG_ 492 VIU_AL_PreDishesArea14 "预制菜位置";
+CM_ SG_ 492 VIU_AL_PreDishesMod14 "预制菜模式";
+CM_ SG_ 492 VIU_AL_ColorSet_R14 "颜色设置-R";
+CM_ SG_ 492 VIU_AL_ColorSet_G14 "颜色设置-G";
+CM_ SG_ 492 VIU_AL_ColorSet_B14 "颜色设置-B";
+CM_ SG_ 492 VIU_AL_BriSet14 "亮度设置";
+CM_ SG_ 492 VIU_AL_BriModSet14 "亮度模式设置";
+CM_ SG_ 492 VIU_AL_PreDishesArea15 "预制菜位置";
+CM_ SG_ 492 VIU_AL_PreDishesMod15 "预制菜模式";
+CM_ SG_ 492 VIU_AL_ColorSet_R15 "颜色设置-R";
+CM_ SG_ 492 VIU_AL_ColorSet_G15 "颜色设置-G";
+CM_ SG_ 492 VIU_AL_ColorSet_B15 "颜色设置-B";
+CM_ SG_ 492 VIU_AL_BriSet15 "亮度设置";
+CM_ SG_ 492 VIU_AL_BriModSet15 "亮度模式设置";
+CM_ SG_ 492 VIU_AL_PreDishesArea16 "预制菜位置";
+CM_ SG_ 492 VIU_AL_PreDishesMod16 "预制菜模式";
+CM_ SG_ 492 VIU_AL_ColorSet_R16 "颜色设置-R";
+CM_ SG_ 492 VIU_AL_ColorSet_G16 "颜色设置-G";
+CM_ SG_ 492 VIU_AL_ColorSet_B16 "颜色设置-B";
+CM_ SG_ 492 VIU_AL_BriSet16 "亮度设置";
+CM_ SG_ 492 VIU_AL_BriModSet16 "亮度模式设置";
+CM_ SG_ 493 VIU_AL_PreDishesArea17 "预制菜位置";
+CM_ SG_ 493 VIU_AL_PreDishesMod17 "预制菜模式";
+CM_ SG_ 493 VIU_AL_ColorSet_R17 "颜色设置-R";
+CM_ SG_ 493 VIU_AL_ColorSet_G17 "颜色设置-G";
+CM_ SG_ 493 VIU_AL_ColorSet_B17 "颜色设置-B";
+CM_ SG_ 493 VIU_AL_BriSet17 "亮度设置";
+CM_ SG_ 493 VIU_AL_BriModSet17 "亮度模式设置";
+CM_ SG_ 493 VIU_AL_PreDishesArea18 "预制菜位置";
+CM_ SG_ 493 VIU_AL_PreDishesMod18 "预制菜模式";
+CM_ SG_ 493 VIU_AL_ColorSet_R18 "颜色设置-R";
+CM_ SG_ 493 VIU_AL_ColorSet_G18 "颜色设置-G";
+CM_ SG_ 493 VIU_AL_ColorSet_B18 "颜色设置-B";
+CM_ SG_ 493 VIU_AL_BriSet18 "亮度设置";
+CM_ SG_ 493 VIU_AL_BriModSet18 "亮度模式设置";
+CM_ SG_ 493 VIU_AL_PreDishesArea19 "预制菜位置";
+CM_ SG_ 493 VIU_AL_PreDishesMod19 "预制菜模式";
+CM_ SG_ 493 VIU_AL_ColorSet_R19 "颜色设置-R";
+CM_ SG_ 493 VIU_AL_ColorSet_G19 "颜色设置-G";
+CM_ SG_ 493 VIU_AL_ColorSet_B19 "颜色设置-B";
+CM_ SG_ 493 VIU_AL_BriSet19 "亮度设置";
+CM_ SG_ 493 VIU_AL_BriModSet19 "亮度模式设置";
+CM_ SG_ 494 VIU_AL_HLPreDishesMod "施罗德散射体预制菜模式";
+CM_ SG_ 494 VIU_AL_HLColorSet_R1 "施罗德散射体颜色设置-R-1";
+CM_ SG_ 494 VIU_AL_HLColorSet_G1 "施罗德散射体颜色设置-G-1";
+CM_ SG_ 494 VIU_AL_HLColorSet_B1 "施罗德散射体颜色设置-B-1";
+CM_ SG_ 494 VIU_AL_HLBriSet_1 "施罗德散射体亮度设置-1";
+CM_ SG_ 494 VIU_AL_HLBriModSet_1 "施罗德散射体亮度模式设置-1";
+CM_ SG_ 494 VIU_AL_HLColorSet_R2 "施罗德散射体颜色设置-R-2";
+CM_ SG_ 494 VIU_AL_HLColorSet_G2 "施罗德散射体颜色设置-G-2";
+CM_ SG_ 494 VIU_AL_HLColorSet_B2 "施罗德散射体颜色设置-B-2";
+CM_ SG_ 494 VIU_AL_HLBriSet_2 "施罗德散射体亮度设置-2";
+CM_ SG_ 494 VIU_AL_HLBriModSet_2 "施罗德散射体亮度模式设置-2";
+CM_ SG_ 494 VIU_AL_HLColorSet_R3 "施罗德散射体颜色设置-R-3";
+CM_ SG_ 494 VIU_AL_HLColorSet_G3 "施罗德散射体颜色设置-G-3";
+CM_ SG_ 494 VIU_AL_HLColorSet_B3 "施罗德散射体颜色设置-B-3";
+CM_ SG_ 494 VIU_AL_HLBriSet_3 "施罗德散射体亮度设置-3";
+CM_ SG_ 494 VIU_AL_HLBriModSet_3 "施罗德散射体亮度模式设置-3";
+CM_ SG_ 494 VIU_AL_HLColorSet_R4 "施罗德散射体颜色设置-R-4";
+CM_ SG_ 494 VIU_AL_HLColorSet_G4 "施罗德散射体颜色设置-G-4";
+CM_ SG_ 494 VIU_AL_HLColorSet_B4 "施罗德散射体颜色设置-B-4";
+CM_ SG_ 494 VIU_AL_HLBriSet_4 "施罗德散射体亮度设置-4";
+CM_ SG_ 494 VIU_AL_HLBriModSet_4 "施罗德散射体亮度模式设置-4";
+CM_ SG_ 494 VIU_AL_HLColorSet_R5 "施罗德散射体颜色设置-R-5";
+CM_ SG_ 494 VIU_AL_HLColorSet_G5 "施罗德散射体颜色设置-G-5";
+CM_ SG_ 494 VIU_AL_HLColorSet_B5 "施罗德散射体颜色设置-B-5";
+CM_ SG_ 494 VIU_AL_HLBriSet_5 "施罗德散射体亮度设置-5";
+CM_ SG_ 494 VIU_AL_HLBriModSet_5 "施罗德散射体亮度模式设置-5";
+CM_ SG_ 494 VIU_AL_HLColorSet_R6 "施罗德散射体颜色设置-R-6";
+CM_ SG_ 494 VIU_AL_HLColorSet_G6 "施罗德散射体颜色设置-G-6";
+CM_ SG_ 494 VIU_AL_HLColorSet_B6 "施罗德散射体颜色设置-B-6";
+CM_ SG_ 494 VIU_AL_HLBriSet_6 "施罗德散射体亮度设置-6";
+CM_ SG_ 494 VIU_AL_HLBriModSet_6 "施罗德散射体亮度模式设置-6";
+CM_ SG_ 494 VIU_AL_HLColorSet_R7 "施罗德散射体颜色设置-R-7";
+CM_ SG_ 494 VIU_AL_HLColorSet_G7 "施罗德散射体颜色设置-G-7";
+CM_ SG_ 494 VIU_AL_HLColorSet_B7 "施罗德散射体颜色设置-B-7";
+CM_ SG_ 494 VIU_AL_HLBriSet_7 "施罗德散射体亮度设置-7";
+CM_ SG_ 494 VIU_AL_HLBriModSet_7 "施罗德散射体亮度模式设置-7";
+CM_ SG_ 1850 Diag_PhyReq_ALC_Data "Diagnostic Physical Request Data to ALC";
+CM_ SG_ 1978 Diag_Resp_ALC_Data "Diagnostic Physical Response Data from ALC";
+
+
+BA_DEF_ BO_  "NmMessage" ENUM "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","Event","IfActive","CE","CA","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnChange","OnWrite","IfActive","OnChangeWithRepetition","OnWriteWithRepetition","IfActiveWithRepetition","NoSigSendType","OnChangeAndIfActive","OnChangeAndIfActiveWithRepetition","CA","CE","Event";
+BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 0;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 0;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_ BO_  "CANFD_BRS" ENUM  "0","1";
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_  "NmMessageCount" INT 0 255;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 65535;
+BA_DEF_ BU_  "NmStationAddress" INT 0 63;
+BA_DEF_ BU_  "NmNode" ENUM  "no","yes";
+BA_DEF_  "NmBaseAddress" HEX 1024 1087;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_ SG_ "GenSigMeplex" STRING;
+BA_DEF_ SG_ "GenSigASIL" ENUM "QM","A","B","C","D","";
+BA_DEF_DEF_  "NmMessage" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "CANFD_BRS" "1";
+BA_DEF_DEF_  "VFrameFormat" "StandardCAN_FD";
+BA_DEF_DEF_  "NmMessageCount" 128;
+BA_DEF_DEF_  "GenMsgILSupport" "No";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "NmNode" "no";
+BA_DEF_DEF_  "NmBaseAddress" 1024;
+BA_DEF_DEF_  "BusType" "CAN FD";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+BA_DEF_DEF_ "GenSigMeplex" "";
+BA_DEF_DEF_ "GenSigASIL" "QM";
+BA_ "DBName" "EHY Car ALC Message list V1.0- 20260318";
+BA_ "DiagState" BO_ 2015 1;
+BA_ "GenMsgSendType" BO_ 2015 1;
+BA_ "GenSigSendType" SG_ 2015 Diag_FuncReq_Data 2;
+BA_ "GenSigASIL"  SG_ 2015 Diag_FuncReq_Data 5;
+BA_ "GenMsgILSupport" BO_ 719 1;
+BA_ "GenMsgCycleTime" BO_ 719 100;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_CeilingLampColorSet_Red 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_CeilingLampColorSet_Green 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_CeilingLampColorSet_Blue 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_CeilingLampBriSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_CeilingLampBriModSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_HiLampColorSet_Red 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_HiLampColorSet_Green 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_HiLampColorSet_Blue 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_HiLampBriSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_HiLampBriModSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_NeutLampColorSet_Red 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_NeutLampColorSet_Green 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_NeutLampColorSet_Blue 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_NeutLampBriSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_NeutLampBriModSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FootLampColorSet_Red 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FootLampColorSet_Green 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FootLampColorSet_Blue 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FootLampBriSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FootLampBriModSet 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_AtmThemeMod 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_NapMod 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FLAC 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FRAC 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_RLAC 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_RRAC 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FragranceMotion 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VoiceInteractIndcrSt 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VoiceInteractIndcrArea 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_StartMotion 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_RearWarn 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_DoorWarn 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_DrivingMod 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_PowerSt 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_Welcome 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_DayNightSt 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FLDoorWarn 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_FRDoorWarn 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_RLDoorWarn 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_RRDoorWarn 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_TwetterLampEnable 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiAreaFL 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiAreaFR 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiAreaML 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiAreaMR 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiAreaRL 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiAreaRR 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiColorSet_Red 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiColorSet_Green 5;
+BA_ "GenSigASIL"  SG_ 719 VIU_AL_VideoAmbLiColorSet_Blue 5;
+BA_ "GenMsgILSupport" BO_ 718 1;
+BA_ "GenMsgCycleTime" BO_ 718 100;
+BA_ "GenSigASIL"  SG_ 718 AL_VIU_Faultfeedback 5;
+BA_ "GenSigASIL"  SG_ 718 AL_VIU_AtmThemeMod 5;
+BA_ "GenMsgILSupport" BO_ 489 1;
+BA_ "GenMsgCycleTime" BO_ 489 20;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesArea1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesMod1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_R1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_G1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_B1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriSet1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriModSet1 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesArea2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesMod2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_R2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_G2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_B2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriSet2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriModSet2 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesArea3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesMod3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_R3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_G3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_B3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriSet3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriModSet3 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesArea4 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_PreDishesMod4 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_R4 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_G4 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_ColorSet_B4 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriSet4 5;
+BA_ "GenSigASIL"  SG_ 489 VIU_AL_BriModSet4 5;
+BA_ "GenMsgILSupport" BO_ 490 1;
+BA_ "GenMsgCycleTime" BO_ 490 20;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesArea5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesMod5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_R5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_G5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_B5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriSet5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriModSet5 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesArea6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesMod6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_R6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_G6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_B6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriSet6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriModSet6 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesArea7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesMod7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_R7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_G7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_B7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriSet7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriModSet7 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesArea8 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_PreDishesMod8 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_R8 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_G8 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_ColorSet_B8 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriSet8 5;
+BA_ "GenSigASIL"  SG_ 490 VIU_AL_BriModSet8 5;
+BA_ "GenMsgILSupport" BO_ 491 1;
+BA_ "GenMsgCycleTime" BO_ 491 20;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesArea9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesMod9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_R9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_G9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_B9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriSet9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriModSet9 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesArea10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesMod10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_R10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_G10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_B10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriSet10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriModSet10 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesArea11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesMod11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_R11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_G11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_B11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriSet11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriModSet11 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesArea12 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_PreDishesMod12 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_R12 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_G12 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_ColorSet_B12 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriSet12 5;
+BA_ "GenSigASIL"  SG_ 491 VIU_AL_BriModSet12 5;
+BA_ "GenMsgILSupport" BO_ 492 1;
+BA_ "GenMsgCycleTime" BO_ 492 20;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesArea13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesMod13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_R13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_G13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_B13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriSet13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriModSet13 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesArea14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesMod14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_R14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_G14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_B14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriSet14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriModSet14 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesArea15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesMod15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_R15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_G15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_B15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriSet15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriModSet15 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesArea16 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_PreDishesMod16 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_R16 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_G16 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_ColorSet_B16 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriSet16 5;
+BA_ "GenSigASIL"  SG_ 492 VIU_AL_BriModSet16 5;
+BA_ "GenMsgILSupport" BO_ 493 1;
+BA_ "GenMsgCycleTime" BO_ 493 20;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_PreDishesArea17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_PreDishesMod17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_R17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_G17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_B17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_BriSet17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_BriModSet17 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_PreDishesArea18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_PreDishesMod18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_R18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_G18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_B18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_BriSet18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_BriModSet18 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_PreDishesArea19 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_PreDishesMod19 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_R19 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_G19 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_ColorSet_B19 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_BriSet19 5;
+BA_ "GenSigASIL"  SG_ 493 VIU_AL_BriModSet19 5;
+BA_ "GenMsgILSupport" BO_ 494 1;
+BA_ "GenMsgCycleTime" BO_ 494 20;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLPreDishesMod 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R1 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G1 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B1 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_1 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_1 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R2 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G2 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B2 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_2 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_2 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R3 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G3 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B3 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_3 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_3 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R4 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G4 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B4 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_4 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_4 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R5 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G5 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B5 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_5 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_5 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R6 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G6 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B6 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_6 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_6 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_R7 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_G7 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLColorSet_B7 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriSet_7 5;
+BA_ "GenSigASIL"  SG_ 494 VIU_AL_HLBriModSet_7 5;
+BA_ "GenMsgSendType" BO_ 1850 1;
+BA_ "GenSigSendType" SG_ 1850 Diag_PhyReq_ALC_Data 2;
+BA_ "GenSigASIL"  SG_ 1850 Diag_PhyReq_ALC_Data 5;
+BA_ "GenMsgSendType" BO_ 1978 1;
+BA_ "GenSigSendType" SG_ 1978 Diag_Resp_ALC_Data 2;
+BA_ "GenSigASIL"  SG_ 1978 Diag_Resp_ALC_Data 5;
+VAL_ 719 VIU_AL_CeilingLampBriSet 127 "Invalid" ;
+VAL_ 719 VIU_AL_CeilingLampBriModSet 1 " GrowDark" 0 " Unchanged" ;
+VAL_ 719 VIU_AL_HiLampBriSet 127 "Invalid" ;
+VAL_ 719 VIU_AL_HiLampBriModSet 1 " GrowDark" 0 " Unchanged" ;
+VAL_ 719 VIU_AL_NeutLampBriSet 127 "Invalid" ;
+VAL_ 719 VIU_AL_NeutLampBriModSet 1 " GrowDark" 0 " Unchanged" ;
+VAL_ 719 VIU_AL_FootLampBriSet 127 "Invalid" ;
+VAL_ 719 VIU_AL_FootLampBriModSet 1 " GrowDark" 0 " Unchanged" ;
+VAL_ 719 VIU_AL_AtmThemeMod 15 " reserved" 14 " reserved" 13 " reserved" 12 " reserved" 11 " reserved" 10 " reserved" 9 " reserved" 8 " reserved" 7 " FollowSpeed" 6 " FollowMusic" 5 " Effect4" 4 " Effect3" 3 " Effect2" 2 " Effect1" 1 " CustomizedMode" 0 " OFF" ;
+VAL_ 719 VIU_AL_NapMod 15 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Waking up" 3 "Sleeping" 2 "Preparing2" 1 "Preparing1" 0 "OFF" ;
+VAL_ 719 VIU_AL_FLAC 3 " Invalid" 2 " Cool" 1 " Warm" 0 " No Request" ;
+VAL_ 719 VIU_AL_FRAC 3 " Invalid" 2 " Cool" 1 " Warm" 0 " No Request" ;
+VAL_ 719 VIU_AL_RLAC 3 " Invalid" 2 " Cool" 1 " Warm" 0 " No Request" ;
+VAL_ 719 VIU_AL_RRAC 3 " Invalid" 2 " Cool" 1 " Warm" 0 " No Request" ;
+VAL_ 719 VIU_AL_FragranceMotion 15 " Invalid" 14 " Effect14" 3 " Effect3" 2 " Effect2" 1 " Effect1" 0 " No Request" ;
+VAL_ 719 VIU_AL_VoiceInteractIndcrSt 15 " reserved" 14 " reserved" 13 " reserved" 12 " reserved" 11 " reserved" 10 " reserved" 9 " active service" 8 " weather report" 7 " broadcast" 6 " listen weakly" 5 " listen qiuckly" 4 " listen slowly" 3 " calling wake up " 2 " wake up" 1 " idle" 0 " Initial" ;
+VAL_ 719 VIU_AL_VoiceInteractIndcrArea 7 " reserved" 6 " reserved" 5 " ALL" 4 " RR" 3 " RL" 2 " FR" 1 " FL" 0 " OFF" ;
+VAL_ 719 VIU_AL_StartMotion 3 "Invalid" 1 "Request" 0 "No Request" ;
+VAL_ 719 VIU_AL_RearWarn 3 " Invalid" 2 " Level 2 (flash)" 1 " Level 1 (stay on)" 0 " OFF" ;
+VAL_ 719 VIU_AL_DoorWarn 3 "Invalid" 2 "Reserved" 1 "ON" 0 "OFF" ;
+VAL_ 719 VIU_AL_DrivingMod 15 "Invalid" 4 " Respect" 3 " Eco" 2 " Comfortable" 1 " Sport" 0 " No Request" ;
+VAL_ 719 VIU_AL_PowerSt 3 "Sleep" 2 "On" 1 "Off" 0 "Initial" ;
+VAL_ 719 VIU_AL_Welcome 31 " Invalid" 30 " Off" 14 " Effect14" 3 " Effect3" 2 " Effect2" 1 " Effect1" 0 " Ininal" ;
+VAL_ 719 VIU_AL_DayNightSt 3 "Invalid" 2 "Reserved" 1 " Night" 0 " Day" ;
+VAL_ 719 VIU_AL_FLDoorWarn 3 "Invalid" 2 "Reserved" 1 "ON" 0 "OFF" ;
+VAL_ 719 VIU_AL_FRDoorWarn 3 "Invalid" 2 "Reserved" 1 "ON" 0 "OFF" ;
+VAL_ 719 VIU_AL_RLDoorWarn 3 "Invalid" 2 "Reserved" 1 "ON" 0 "OFF" ;
+VAL_ 719 VIU_AL_RRDoorWarn 3 "Invalid" 2 "Reserved" 1 "ON" 0 "OFF" ;
+VAL_ 719 VIU_AL_TwetterLampEnable 3 "Invalid" 2 " Enable" 1 " Disable" 0 " Initial" ;
+VAL_ 719 VIU_AL_VideoAmbLiAreaFL 1 "Active" 0 " Inactive" ;
+VAL_ 719 VIU_AL_VideoAmbLiAreaFR 1 "Active" 0 " Inactive" ;
+VAL_ 719 VIU_AL_VideoAmbLiAreaML 1 "Active" 0 " Inactive" ;
+VAL_ 719 VIU_AL_VideoAmbLiAreaMR 1 "Active" 0 " Inactive" ;
+VAL_ 719 VIU_AL_VideoAmbLiAreaRL 1 "Active" 0 " Inactive" ;
+VAL_ 719 VIU_AL_VideoAmbLiAreaRR 1 "Active" 0 " Inactive" ;
+VAL_ 718 AL_VIU_Faultfeedback 15 " reserved" 14 " reserved" 13 " reserved" 12 " reserved" 11 " reserved" 10 "LIN_6_Electrical fault" 9 "LIN_5_Electrical fault" 8 " LIN_4_Electrical fault" 7 " LIN_3_Electrical fault" 6 " LIN_2_Electrical fault" 5 " LIN_1_Electrical fault" 4 " ELINS_3_Electrical fault" 3 " ELINS_2_Electrical fault" 2 " ELINS_1_Electrical fault" 1 " AL Electrical fault" 0 " No Error" ;
+VAL_ 718 AL_VIU_AtmThemeMod 15 " reserved" 14 " reserved" 13 " reserved" 12 " reserved" 11 " reserved" 10 " reserved" 9 " reserved" 8 " reserved" 7 " FollowSpeed" 6 " FollowMusic" 5 " Effect4" 4 " Effect3" 3 " Effect2" 2 " Effect1" 1 " CustomizedMode" 0 " OFF" ;
+VAL_ 489 VIU_AL_PreDishesArea1 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" 0 "Initial" ;
+VAL_ 489 VIU_AL_PreDishesMod1 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 489 VIU_AL_BriSet1 127 "Invalid" ;
+VAL_ 489 VIU_AL_BriModSet1 1 " 渐暗" 0 " 不变" ;
+VAL_ 489 VIU_AL_PreDishesArea2 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 489 VIU_AL_PreDishesMod2 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 489 VIU_AL_BriSet2 127 "Invalid" ;
+VAL_ 489 VIU_AL_BriModSet2 1 " 渐暗" 0 " 不变" ;
+VAL_ 489 VIU_AL_PreDishesArea3 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 489 VIU_AL_PreDishesMod3 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 489 VIU_AL_BriSet3 127 "Invalid" ;
+VAL_ 489 VIU_AL_BriModSet3 1 " 渐暗" 0 " 不变" ;
+VAL_ 489 VIU_AL_PreDishesArea4 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 489 VIU_AL_PreDishesMod4 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 489 VIU_AL_BriSet4 127 "Invalid" ;
+VAL_ 489 VIU_AL_BriModSet4 1 " 渐暗" 0 " 不变" ;
+VAL_ 490 VIU_AL_PreDishesArea5 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 490 VIU_AL_PreDishesMod5 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 490 VIU_AL_BriSet5 127 "Invalid" ;
+VAL_ 490 VIU_AL_BriModSet5 1 " 渐暗" 0 " 不变" ;
+VAL_ 490 VIU_AL_PreDishesArea6 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 490 VIU_AL_PreDishesMod6 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 490 VIU_AL_BriSet6 127 "Invalid" ;
+VAL_ 490 VIU_AL_BriModSet6 1 " 渐暗" 0 " 不变" ;
+VAL_ 490 VIU_AL_PreDishesArea7 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 490 VIU_AL_PreDishesMod7 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 490 VIU_AL_BriSet7 127 "Invalid" ;
+VAL_ 490 VIU_AL_BriModSet7 1 " 渐暗" 0 " 不变" ;
+VAL_ 490 VIU_AL_PreDishesArea8 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 490 VIU_AL_PreDishesMod8 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 490 VIU_AL_BriSet8 127 "Invalid" ;
+VAL_ 490 VIU_AL_BriModSet8 1 " 渐暗" 0 " 不变" ;
+VAL_ 491 VIU_AL_PreDishesArea9 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 491 VIU_AL_PreDishesMod9 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 491 VIU_AL_BriSet9 127 "Invalid" ;
+VAL_ 491 VIU_AL_BriModSet9 1 " 渐暗" 0 " 不变" ;
+VAL_ 491 VIU_AL_PreDishesArea10 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 491 VIU_AL_PreDishesMod10 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 491 VIU_AL_BriSet10 127 "Invalid" ;
+VAL_ 491 VIU_AL_BriModSet10 1 " 渐暗" 0 " 不变" ;
+VAL_ 491 VIU_AL_PreDishesArea11 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 491 VIU_AL_PreDishesMod11 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 491 VIU_AL_BriSet11 127 "Invalid" ;
+VAL_ 491 VIU_AL_BriModSet11 1 " 渐暗" 0 " 不变" ;
+VAL_ 491 VIU_AL_PreDishesArea12 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 491 VIU_AL_PreDishesMod12 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 491 VIU_AL_BriSet12 127 "Invalid" ;
+VAL_ 491 VIU_AL_BriModSet12 1 " 渐暗" 0 " 不变" ;
+VAL_ 492 VIU_AL_PreDishesArea13 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 492 VIU_AL_PreDishesMod13 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 492 VIU_AL_BriSet13 127 "Invalid" ;
+VAL_ 492 VIU_AL_BriModSet13 1 " 渐暗" 0 " 不变" ;
+VAL_ 492 VIU_AL_PreDishesArea14 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 492 VIU_AL_PreDishesMod14 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 492 VIU_AL_BriSet14 127 "Invalid" ;
+VAL_ 492 VIU_AL_BriModSet14 1 " 渐暗" 0 " 不变" ;
+VAL_ 492 VIU_AL_PreDishesArea15 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 492 VIU_AL_PreDishesMod15 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 492 VIU_AL_BriSet15 127 "Invalid" ;
+VAL_ 492 VIU_AL_BriModSet15 1 " 渐暗" 0 " 不变" ;
+VAL_ 492 VIU_AL_PreDishesArea16 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 492 VIU_AL_PreDishesMod16 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 492 VIU_AL_BriSet16 127 "Invalid" ;
+VAL_ 492 VIU_AL_BriModSet16 1 " 渐暗" 0 " 不变" ;
+VAL_ 493 VIU_AL_PreDishesArea17 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 493 VIU_AL_PreDishesMod17 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 493 VIU_AL_BriSet17 127 "Invalid" ;
+VAL_ 493 VIU_AL_BriModSet17 1 " 渐暗" 0 " 不变" ;
+VAL_ 493 VIU_AL_PreDishesArea18 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 493 VIU_AL_PreDishesMod18 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 493 VIU_AL_BriSet18 127 "Invalid" ;
+VAL_ 493 VIU_AL_BriModSet18 1 " 渐暗" 0 " 不变" ;
+VAL_ 493 VIU_AL_PreDishesArea19 31 " Invalid" 20 "TweeterLamp" 19 "RiIPLamp" 18 "MiIPLamp" 17 "LeIPLamp" 16 "RRFootLamp" 15 "RLFootLamp" 14 "FRFootLamp" 13 "FLFootLamp" 12 "RRNeutLamp" 11 "RLNeutLamp" 10 "FRNeutLamp" 9 "FLNeutLamp" 8 "RRHighLamp" 7 "RLHighLamp" 6 "FRHighLamp" 5 "FLHighLamp" 4 "RRCeilingLamp" 3 "RLCeilingLamp" 2 "FRCeilingLamp" 1 "FLCeilingLamp" ;
+VAL_ 493 VIU_AL_PreDishesMod19 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 493 VIU_AL_BriSet19 127 "Invalid" ;
+VAL_ 493 VIU_AL_BriModSet19 1 " 渐暗" 0 "不变" ;
+VAL_ 494 VIU_AL_HLPreDishesMod 3 "Invalid" 2 " On" 1 " Off" 0 " Initial" ;
+VAL_ 494 VIU_AL_HLBriSet_1 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_1 1 " 渐暗" 0 "不变" ;
+VAL_ 494 VIU_AL_HLBriSet_2 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_2 1 " 渐暗" 0 "不变" ;
+VAL_ 494 VIU_AL_HLBriSet_3 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_3 1 " 渐暗" 0 " 不变" ;
+VAL_ 494 VIU_AL_HLBriSet_4 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_4 1 " 渐暗" 0 " 不变" ;
+VAL_ 494 VIU_AL_HLBriSet_5 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_5 1 " 渐暗" 0 " 不变" ;
+VAL_ 494 VIU_AL_HLBriSet_6 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_6 1 " 渐暗" 0 " 不变" ;
+VAL_ 494 VIU_AL_HLBriSet_7 127 "Invalid" ;
+VAL_ 494 VIU_AL_HLBriModSet_7 1 " 渐暗" 0 " 不变" ;

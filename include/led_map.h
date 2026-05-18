@@ -3,124 +3,214 @@
 #include "types.h"
 
 // ============================================================================
-// Zone 定义 — 车身内每个灯光区域的编号
+// Zone 层级 — 按车身高度分层
 // ============================================================================
-// 新增 zone 时加在 ZONE_COUNT 前面，ZONE_COUNT 保持最后一个。
-// ZoneMask 用位图表示"哪些 zone 被选中"，这里的编号就是位图中的 bit 位置。
-//
-// zone = 逻辑光照区域（仲裁的基本单位）
-// 点光源（门灯、脚窝灯）一个 zone 只有 1 个像素
-// 流水灯带（车顶灯带、氛围灯带）一个 zone 包含多个像素，内部用数字索引
+typedef enum {
+    LAYER_FOOT,   // 照脚灯
+    LAYER_MAP,    // 地图袋
+    LAYER_MID,    // 中音 / 扬声器
+    LAYER_UPPER,  // 上装 (高位灯 / 顶灯)
+} ZoneLayer;
+
+// ============================================================================
+// Zone 定义 — 28 个逻辑灯区
+// ============================================================================
 enum {
-    Z_FRONT_LEFT_DOOR,   // 0  左前门
-    Z_FRONT_RIGHT_DOOR,  // 1  右前门
-    Z_REAR_LEFT_DOOR,    // 2  左后门
-    Z_REAR_RIGHT_DOOR,   // 3  右后门
-    Z_FOOTWELL_LEFT,     // 4  左脚窝
-    Z_FOOTWELL_RIGHT,    // 5  右脚窝
-    Z_INSTRUMENT,        // 6  仪表台
-    Z_ROOF_FRONT,        // 7  车顶前段 (40 像素)
-    Z_ROOF_MID,          // 8  车顶中段 (40 像素) ← rl1 和 rl2 重叠争用
-    Z_ROOF_REAR,         // 9  车顶后段 (20 像素)
-    Z_AMBIENT_STRIP,     // 10 氛围灯带 (50 像素)
-    ZONE_COUNT           // 11 计数标记，保持最后
+    // 流水灯 (仪表 3 段 PCB) — 3 个多像素 zone
+    Z_IP_FLOW_1,   // 0   12 像素
+    Z_IP_FLOW_2,   // 1    6 像素
+    Z_IP_FLOW_3,   // 2    9 像素
+
+    // 仪表高位灯 (6)
+    Z_IP_H1,       // 3
+    Z_IP_H2,       // 4
+    Z_IP_H3,       // 5
+    Z_IP_H4,       // 6
+    Z_IP_H5,       // 7
+    Z_IP_H6,       // 8
+
+    // 左前门 (5)
+    Z_LF_FOOT,     // 9
+    Z_LF_MAP,      // 10
+    Z_LF_UP_A,     // 11
+    Z_LF_UP_B,     // 12
+    Z_LF_SPK,      // 13
+
+    // 左后门 (4)
+    Z_LR_FOOT,     // 14
+    Z_LR_MAP,      // 15
+    Z_LR_UP_A,     // 16
+    Z_LR_UP_B,     // 17
+
+    // 右前门 (5)
+    Z_RF_FOOT,     // 18
+    Z_RF_MAP,      // 19
+    Z_RF_UP_A,     // 20
+    Z_RF_UP_B,     // 21
+    Z_RF_SPK,      // 22
+
+    // 右后门 (4)
+    Z_RR_FOOT,     // 23
+    Z_RR_MAP,      // 24
+    Z_RR_UP_A,     // 25
+    Z_RR_UP_B,     // 26
+
+    // 中控 (1)
+    Z_CENTER,      // 27
+
+    ZONE_COUNT     // 28
 };
 
 // ============================================================================
-// Zone 像素布局 — 描述每个 zone 在像素缓冲池中的位置和像素数
+// Zone 像素布局 — offset 在扁平缓冲池中的位置
 // ============================================================================
 typedef struct {
-    uint16_t offset;       // 在像素缓冲池中的起始位置
-    uint16_t pixel_count;  // 这个 zone 有几个像素
+    uint16_t  offset;
+    uint16_t  pixel_count;
+    ZoneLayer layer;
 } ZoneLayout;
 
-// 每个 zone 的像素数量配置 —— 按实际硬件连线定义
-// 新增 zone 时在这里补一行，然后更新 TOTAL_PIXELS
 static const ZoneLayout g_zone_layout[ZONE_COUNT] = {
-    [Z_FRONT_LEFT_DOOR]  = { 0,   1 },
-    [Z_FRONT_RIGHT_DOOR] = { 1,   1 },
-    [Z_REAR_LEFT_DOOR]   = { 2,   1 },
-    [Z_REAR_RIGHT_DOOR]  = { 3,   1 },
-    [Z_FOOTWELL_LEFT]    = { 4,   1 },
-    [Z_FOOTWELL_RIGHT]   = { 5,   1 },
-    [Z_INSTRUMENT]       = { 6,   1 },
-    [Z_ROOF_FRONT]       = { 7,   40 },
-    [Z_ROOF_MID]         = { 47,  40 },
-    [Z_ROOF_REAR]        = { 87,  20 },
-    [Z_AMBIENT_STRIP]    = { 107, 50 },
+    // 流水灯 (27 像素: 12+6+9)
+    [Z_IP_FLOW_1]   = { 0,  12, LAYER_UPPER },
+    [Z_IP_FLOW_2]   = { 12,  6, LAYER_UPPER },
+    [Z_IP_FLOW_3]   = { 18,  9, LAYER_UPPER },
+
+    // 仪表高位灯 (6)
+    [Z_IP_H1]       = { 27,  1, LAYER_UPPER },
+    [Z_IP_H2]       = { 28,  1, LAYER_UPPER },
+    [Z_IP_H3]       = { 29,  1, LAYER_UPPER },
+    [Z_IP_H4]       = { 30,  1, LAYER_UPPER },
+    [Z_IP_H5]       = { 31,  1, LAYER_UPPER },
+    [Z_IP_H6]       = { 32,  1, LAYER_UPPER },
+
+    // 左前门
+    [Z_LF_FOOT]     = { 33,  1, LAYER_FOOT  },
+    [Z_LF_MAP]      = { 34,  1, LAYER_MAP   },
+    [Z_LF_UP_A]     = { 35,  1, LAYER_UPPER },
+    [Z_LF_UP_B]     = { 36,  1, LAYER_UPPER },
+    [Z_LF_SPK]      = { 37,  1, LAYER_MID   },
+
+    // 左后门
+    [Z_LR_FOOT]     = { 38,  1, LAYER_FOOT  },
+    [Z_LR_MAP]      = { 39,  1, LAYER_MAP   },
+    [Z_LR_UP_A]     = { 40,  1, LAYER_UPPER },
+    [Z_LR_UP_B]     = { 41,  1, LAYER_UPPER },
+
+    // 右前门
+    [Z_RF_FOOT]     = { 42,  1, LAYER_FOOT  },
+    [Z_RF_MAP]      = { 43,  1, LAYER_MAP   },
+    [Z_RF_UP_A]     = { 44,  1, LAYER_UPPER },
+    [Z_RF_UP_B]     = { 45,  1, LAYER_UPPER },
+    [Z_RF_SPK]      = { 46,  1, LAYER_MID   },
+
+    // 右后门
+    [Z_RR_FOOT]     = { 47,  1, LAYER_FOOT  },
+    [Z_RR_MAP]      = { 48,  1, LAYER_MAP   },
+    [Z_RR_UP_A]     = { 49,  1, LAYER_UPPER },
+    [Z_RR_UP_B]     = { 50,  1, LAYER_UPPER },
+
+    // 中控
+    [Z_CENTER]      = { 51,  1, LAYER_MAP   },
 };
 
-// 像素总和 = 1+1+1+1+1+1+1+40+40+20+50，必须和 g_zone_layout 保持同步
-#define TOTAL_PIXELS 157
+#define TOTAL_PIXELS 52
 
 // ============================================================================
-// 每帧输出的 LED 颜色值
+// LED 输出结构 — 扁平化像素缓冲池
 // ============================================================================
-typedef struct { uint8_t r, g, b; uint8_t brightness; } LedPixel;
+// f/10 = 从当前实际颜色过渡到目标颜色的秒数（硬件 slew）
+typedef struct { uint8_t r, g, b; uint8_t l; uint8_t f; } LedPixel;
 
-// 扁平化像素缓冲池 —— 所有 zone 的像素连续存放
-// zone_fill() 按 g_zone_layout 写入对应 zone 的像素
-// 流水灯效可直接用 g_zone_layout[zone].offset + pixel_index 访问
 typedef struct {
     LedPixel pixels[TOTAL_PIXELS];
 } LedOutput;
 
-// 便利函数: 设置一个 zone 内所有像素为相同颜色（点光源和灯带通用）
+// ---- 便利函数 --------------------------------------------------------------
+
+// 设置一个 zone 内所有像素为相同颜色
 static inline void zone_fill(LedOutput *out, int zone,
-                             uint8_t r, uint8_t g, uint8_t b, uint8_t br) {
+                             uint8_t r, uint8_t g, uint8_t b, uint8_t l, uint8_t f) {
     const ZoneLayout *zl = &g_zone_layout[zone];
     for (int i = 0; i < zl->pixel_count; i++) {
-        out->pixels[zl->offset + i].r          = r;
-        out->pixels[zl->offset + i].g          = g;
-        out->pixels[zl->offset + i].b          = b;
-        out->pixels[zl->offset + i].brightness = br;
+        out->pixels[zl->offset + i].r = r;
+        out->pixels[zl->offset + i].g = g;
+        out->pixels[zl->offset + i].b = b;
+        out->pixels[zl->offset + i].l = l;
+        out->pixels[zl->offset + i].f = f;
     }
 }
 
+// 查一个 zone 的层级
+static inline ZoneLayer zone_layer(int z) {
+    return g_zone_layout[z].layer;
+}
+
 // ============================================================================
-// Zone 分组 — 按物理布局把常用组合预定义好，效果工厂里直接用名字引用
+// Zone 分组 — 按物理位置 / 层级预定义，效果里直接用名字引用
 // ============================================================================
+
+// ---- 按位置 ----------------------------------------------------------------
+
+static inline ZoneMask zm_group_flow_all(void) {
+    ZoneMask m; zm_clear(&m);
+    zm_set(&m, Z_IP_FLOW_1);
+    zm_set(&m, Z_IP_FLOW_2);
+    zm_set(&m, Z_IP_FLOW_3);
+    return m;
+}
+
+static inline ZoneMask zm_group_ip_all(void) {
+    ZoneMask m; zm_clear(&m);
+    for (int i = Z_IP_H1; i <= Z_IP_H6; i++) zm_set(&m, i);
+    return m;
+}
+
+static inline ZoneMask zm_group_door_lf(void) {
+    ZoneMask m; zm_clear(&m);
+    zm_set_range(&m, Z_LF_FOOT, 5);
+    return m;
+}
+
+static inline ZoneMask zm_group_door_lr(void) {
+    ZoneMask m; zm_clear(&m);
+    zm_set_range(&m, Z_LR_FOOT, 4);
+    return m;
+}
+
+static inline ZoneMask zm_group_door_rf(void) {
+    ZoneMask m; zm_clear(&m);
+    zm_set_range(&m, Z_RF_FOOT, 5);
+    return m;
+}
+
+static inline ZoneMask zm_group_door_rr(void) {
+    ZoneMask m; zm_clear(&m);
+    zm_set_range(&m, Z_RR_FOOT, 4);
+    return m;
+}
+
 static inline ZoneMask zm_group_all_doors(void) {
-    ZoneMask m; zm_clear(&m);
-    zm_set(&m, Z_FRONT_LEFT_DOOR);
-    zm_set(&m, Z_FRONT_RIGHT_DOOR);
-    zm_set(&m, Z_REAR_LEFT_DOOR);
-    zm_set(&m, Z_REAR_RIGHT_DOOR);
+    ZoneMask m, t; zm_clear(&m);
+    t = zm_group_door_lf(); zm_or(&m, &t);
+    t = zm_group_door_lr(); zm_or(&m, &t);
+    t = zm_group_door_rf(); zm_or(&m, &t);
+    t = zm_group_door_rr(); zm_or(&m, &t);
     return m;
 }
 
-static inline ZoneMask zm_group_front_doors(void) {
-    ZoneMask m; zm_clear(&m);
-    zm_set(&m, Z_FRONT_LEFT_DOOR);
-    zm_set(&m, Z_FRONT_RIGHT_DOOR);
-    return m;
-}
+// ---- 按层级 ----------------------------------------------------------------
 
-static inline ZoneMask zm_group_rear_doors(void) {
+static inline ZoneMask zm_group_layer(ZoneLayer layer) {
     ZoneMask m; zm_clear(&m);
-    zm_set(&m, Z_REAR_LEFT_DOOR);
-    zm_set(&m, Z_REAR_RIGHT_DOOR);
-    return m;
-}
-
-static inline ZoneMask zm_group_roof_all(void) {
-    ZoneMask m; zm_clear(&m);
-    zm_set(&m, Z_ROOF_FRONT);
-    zm_set(&m, Z_ROOF_MID);
-    zm_set(&m, Z_ROOF_REAR);
-    return m;
-}
-
-static inline ZoneMask zm_group_feet_wells(void) {
-    ZoneMask m; zm_clear(&m);
-    zm_set(&m, Z_FOOTWELL_LEFT);
-    zm_set(&m, Z_FOOTWELL_RIGHT);
+    for (int z = 0; z < ZONE_COUNT; z++)
+        if (g_zone_layout[z].layer == layer) zm_set(&m, z);
     return m;
 }
 
 static inline ZoneMask zm_group_all_zones(void) {
     ZoneMask m; zm_clear(&m);
-    for (int i = 0; i < ZONE_COUNT; i++) zm_set(&m, i);
+    for (int z = 0; z < ZONE_COUNT; z++) zm_set(&m, z);
     return m;
 }
 

@@ -6,7 +6,7 @@
 // ============================================================================
 // ambient — 背景氛围灯 (优先级 1，最低)
 // ============================================================================
-// 管辖 zone: 全部 9 个 zone
+// 管辖 zone: 全部 28 个 zone
 // 效果: 暖白色低亮度常亮，任何其他灯效激活时被影子化
 
 static void ambient_init(Effect *e, TimeMs now) {
@@ -17,9 +17,9 @@ static void ambient_init(Effect *e, TimeMs now) {
 static void ambient_update(Effect *e, TimeMs now, int allowed, LedOutput *out) {
     (void)now;
     if (!allowed || !out) return;
-    for (int i = 0; i < MAX_ZONES; i++) {
+    for (int i = 0; i < ZONE_COUNT; i++) {
         if (zm_test(&e->mask, i))
-            zone_fill(out, i, 255, 180, 60, 40);
+            zone_fill(out, i, 255, 180, 60, 40, 0);
     }
 }
 

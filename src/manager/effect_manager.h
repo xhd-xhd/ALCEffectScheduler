@@ -19,6 +19,7 @@ void em_register_factory(const char *name, Effect* (*factory)(void));
 void em_process_command(const EffectCommand *cmd);
 void em_update_all(TimeMs now, LedOutput *out);
 void em_shutdown(void);
+void em_set_mask(const char *name, ZoneMask mask);
 
 // 查询当前活跃效果（供仪表板调试用）
 typedef struct {

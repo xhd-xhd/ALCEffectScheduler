@@ -88,6 +88,9 @@ typedef enum {
     EVT_MODE,       // 氛围灯模式切换
     EVT_MUSIC_BEAT, // 音乐节拍
     EVT_REAR_ALERT, // 后雷达告警
+    EVT_ALCTRL,       // BO_719 主控制帧 (VIU_ALCtrl)
+    EVT_MUSIC_FOLLOW,// BO_489-493 音乐随动区域
+    EVT_MUSIC_TWEETER,// BO_494 高音扬声器散光
     EVT_RAW         // 原始 CAN 帧透传
 } EventType;
 
@@ -122,7 +125,6 @@ typedef struct {
     CmdType     type;
     const char *effect_name;   // 对应 em_register_factory 注册的名字
     ZoneMask    mask;          // 效果作用的 zone 范围
-    int         priority;      // 优先级，越大越高
     void       *params;        // 可选参数
     TimeMs      ts;
 } EffectCommand;

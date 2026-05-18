@@ -4,17 +4,13 @@
 #include "led_map.h"
 
 // ============================================================================
-// running_light — 流水灯效（共享 update，两个工厂）
+// running_light — 仪表流水灯效（共享 update，两个工厂）
 // ============================================================================
-// rl1: 车顶前段+中段, pri=5, cyan
-// rl2: 车顶中段+后段, pri=6, orange
-// 两者在 Z_ROOF_MID 上重叠 → rl2 优先级更高，仲裁时自动抢走中段
+// rl1: 仪表段1+段2, pri=5, cyan
+// rl2: 仪表段2+段3, pri=6, orange
+// 两者在 Z_IP_FLOW_2 上重叠 → rl2 优先级更高，仲裁时自动抢走段2
 //
-// 这是演示 zone 级仲裁的标准案例：
-//   - 效果通过 e->mask 声明自己"想要"哪些 zone
-//   - EffectManager 根据优先级分配：高优先级拿走重叠 zone
-//   - 低优先级效果在 update() 里通过 zm_test(&e->mask, z) 看到已被裁剪的 mask
-//   - 效果只需要遍历 e->mask，不用关心谁抢走了哪个 zone
+// zone 仲裁: rl2 优先级高，自动抢走 Z_IP_FLOW_2
 
 #define TAIL_LEN 20
 
@@ -31,7 +27,7 @@ static void rl_update(Effect *e, TimeMs now, int allowed, LedOutput *out) {
     RLColor *c = (RLColor *)e->params;
     uint32_t t = now - e->start_ts;
 
-    for (int z = 0; z < MAX_ZONES; z++) {
+    for (int z = 0; z < ZONE_COUNT; z++) {
         if (!zm_test(&e->mask, z)) continue;  // ← 只看仲裁后实际拿到的 zone
 
         const ZoneLayout *zl = &g_zone_layout[z];
@@ -51,7 +47,7 @@ static void rl_update(Effect *e, TimeMs now, int allowed, LedOutput *out) {
             p->r          = c->r;
             p->g          = c->g;
             p->b          = c->b;
-            p->brightness = br;
+            p->l = br; p->f = 0;
         }
     }
 }
@@ -65,8 +61,8 @@ static RLColor color_orange = { 255, 100, 0   };
 
 Effect *running_light_1_factory(void) {
     ZoneMask mask; zm_clear(&mask);
-    zm_set(&mask, Z_ROOF_FRONT);
-    zm_set(&mask, Z_ROOF_MID);
+    zm_set(&mask, Z_IP_FLOW_1);
+    zm_set(&mask, Z_IP_FLOW_2);
 
     Effect *e = effect_create_base("running_light_1", 5, mask);
     if (!e) return NULL;
@@ -79,8 +75,8 @@ Effect *running_light_1_factory(void) {
 
 Effect *running_light_2_factory(void) {
     ZoneMask mask; zm_clear(&mask);
-    zm_set(&mask, Z_ROOF_MID);
-    zm_set(&mask, Z_ROOF_REAR);
+    zm_set(&mask, Z_IP_FLOW_2);
+    zm_set(&mask, Z_IP_FLOW_3);
 
     Effect *e = effect_create_base("running_light_2", 6, mask);
     if (!e) return NULL;

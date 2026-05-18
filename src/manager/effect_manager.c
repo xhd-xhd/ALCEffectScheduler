@@ -108,6 +108,17 @@ void em_update_all(TimeMs now, LedOutput *out) {
     }
 }
 
+
+// 运行时动态更新效果的 zone mask（用于 video_ambient 等按区域部分激活的效果）
+void em_set_mask(const char *name, ZoneMask mask) {
+    for (int i = 0; i < effect_count; i++) {
+        Effect *e = effects[i];
+        if (e && strcmp(e->name, name) == 0) {
+            e->mask = mask;
+            return;
+        }
+    }
+}
 void em_shutdown(void) {
     for (int i = 0; i < effect_count; i++) {
         if (effects[i])

@@ -1,62 +1,71 @@
 #include "parser.h"
+#include "can_frames.h"
 #include <string.h>
 
-// ============================================================================
-// CAN FD 帧解析器 — 64 字节原始帧 → Event
-// ============================================================================
-// 帧格式（与 can_sim 约定一致）:
-//   bytes 0..3  → CAN ID (uint32 LE)
-//   bytes 4..63 → payload (60 bytes)
-//
-// MCU 移植时替换为你实际的 CAN 信号定义。
-// PC 模拟器使用以下 ID:
-//   0x100 — 车门状态
-//   0x200 — 后雷达距离
-//   0x300 — 车速（预留）
-//   0x400 — 氛围灯模式
+// 全局接收帧 — 所有 CAN ID 的最新数据都在这里，应用层直接读
+CanFrame g_rx_frame;
 
-static uint32_t read_u32le(const uint8_t *b) {
-    return (uint32_t)b[0] | ((uint32_t)b[1] << 8)
-         | ((uint32_t)b[2] << 16) | ((uint32_t)b[3] << 24);
+void can_parser_init(void) {
+    memset(&g_rx_frame, 0, sizeof(CanFrame));
 }
 
-void can_parser_init(void) {}
-
-int can_parse_frame(const uint8_t frame[64], Event *out_events, int max_out) {
-    if (max_out < 1) return 0;
-    uint32_t can_id = read_u32le(frame);
-    const uint8_t *d = frame + 4; // payload 从 byte 4 开始
-
-    memset(out_events, 0, sizeof(Event));
-    out_events[0].ts = 0; // 由主循环填入实际时间戳
+// 收到一帧 → 根据 ID 填入 g_rx_frame 对应 union
+int can_handle_frame(const uint8_t frame[64]) {
+    uint32_t can_id = (uint32_t)frame[0] | ((uint32_t)frame[1] << 8)
+                    | ((uint32_t)frame[2] << 16) | ((uint32_t)frame[3] << 24);
 
     switch (can_id) {
-    case 0x100: // 车门状态: d[0]=门编号, d[1]=开/关
-        out_events[0].type = EVT_DOOR;
-        out_events[0].data.door.door_index = d[0];
-        out_events[0].data.door.opened     = d[1];
+    case 0x2CF:
+        memcpy(g_rx_frame.canfd_0x2cf._0x2cf_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
         return 1;
-    case 0x200: { // 后雷达: d[0]=左右, d[1..4]=float 距离(米)
-        out_events[0].type = EVT_REAR_ALERT;
-        out_events[0].data.rear.side = d[0];
-        float dist;
-        memcpy(&dist, d + 1, 4);
-        out_events[0].data.rear.distance = dist;
+    case 0x1E9:
+        memcpy(g_rx_frame.canfd_0x1e9._0x1e9_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
         return 1;
-    }
-    case 0x300: { // 车速: d[0..1]=uint16 kph*10
-        out_events[0].type = EVT_SPEED;
-        uint16_t kph_x10;
-        memcpy(&kph_x10, d, 2);
-        out_events[0].data.speed.kph = kph_x10 / 10.0f;
+    case 0x1EA:
+        memcpy(g_rx_frame.canfd_0x1ea._0x1ea_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
         return 1;
-    }
-    case 0x400: // 氛围灯模式: d[0]=模式 ID
-        out_events[0].type = EVT_MODE;
-        out_events[0].data.mode.mode_id = d[0];
-        out_events[0].data.mode.params   = NULL;
+    case 0x1EB:
+        memcpy(g_rx_frame.canfd_0x1eb._0x1eb_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
+        return 1;
+    case 0x1EC:
+        memcpy(g_rx_frame.canfd_0x1ec._0x1ec_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
+        return 1;
+    case 0x1ED:
+        memcpy(g_rx_frame.canfd_0x1ed._0x1ed_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
+        return 1;
+    case 0x1EE:
+        memcpy(g_rx_frame.canfd_0x1ee._0x1ee_data, frame + 4, 60);
+        g_rx_frame.id = can_id;
         return 1;
     default:
-        return 0; // 未知 CAN ID，忽略
+        return 0;
+    }
+}
+
+// 兼容旧接口 — 收到帧后直接产生 Event
+int can_parse_frame(const uint8_t frame[64], Event *out_events, int max_out) {
+    if (max_out < 1) return 0;
+    if (!can_handle_frame(frame)) return 0;
+
+    memset(out_events, 0, sizeof(Event));
+
+    switch (g_rx_frame.id) {
+    case 0x2CF:
+        out_events[0].type = EVT_ALCTRL;
+        return 1;
+    case 0x1E9: case 0x1EA: case 0x1EB: case 0x1EC: case 0x1ED:
+        out_events[0].type = EVT_MUSIC_FOLLOW;
+        return 1;
+    case 0x1EE:
+        out_events[0].type = EVT_MUSIC_TWEETER;
+        return 1;
+    default:
+        return 0;
     }
 }

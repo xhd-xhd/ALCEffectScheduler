@@ -22,9 +22,9 @@ static void welcome_update(Effect *e, TimeMs now, int allowed, LedOutput *out) {
     float    breath  = (sinf((float)elapsed / 600.0f * 3.14159265f) + 1.0f) / 2.0f;
     uint8_t  bright  = (uint8_t)(breath * 200.0f * t + 30.0f);
 
-    for (int i = 0; i < MAX_ZONES; i++) {
+    for (int i = 0; i < ZONE_COUNT; i++) {
         if (zm_test(&e->mask, i))
-            zone_fill(out, i, 0, 100, 255, bright);
+            zone_fill(out, i, 0, 100, 255, bright, 0);
     }
 }
 

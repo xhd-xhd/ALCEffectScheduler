@@ -1,12 +1,20 @@
-CC=gcc
-CFLAGS=-O2 -Wall -Iinclude -Isrc
-LDFLAGS=-lm
-SRCS=$(wildcard src/*.c src/*/*.c src/*/*/*.c)
+CC     = gcc
+CFLAGS = -O2 -Wall -Iinclude -Isrc
+LDFLAGS = -lm
+SRCS   = $(wildcard src/*.c src/*/*.c src/*/*/*.c)
+OBJDIR = build
+BINARY = $(OBJDIR)/alceffect
+OBJS   = $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 
-all: alceffect
+all: $(BINARY)
 
-alceffect: $(SRCS)
-	$(CC) $(CFLAGS) -o $@ $(SRCS) $(LDFLAGS)
+$(BINARY): $(OBJS)
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
+
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f alceffect *.o
+	rm -rf $(OBJDIR) *.o alceffect
