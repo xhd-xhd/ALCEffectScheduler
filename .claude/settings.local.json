@@ -60,7 +60,24 @@
       "Bash(sed -i 's|em_register_factory\\(\"tweeter_off\",      tweeter_off_factory\\);|em_register_factory\\(\"tweeter_off\",      tweeter_off_factory\\);\\\\n    em_register_factory\\(\"video_ambient\",    video_ambient_factory\\);|' src/main.c)",
       "Bash(sed -i 's|// TODO: 每个区域的 zone 列表 \\(填入实际 zone 枚举值\\)|// 每个区域的 zone 列表 \\(TODO: 填入实际 zone 枚举值\\)\\\\n// 6 个列表的并集构成 video_ambient 的 zone mask|' src/effects/video_ambient.c)",
       "Bash(sed -i 's|Effect \\\\*video_ambient_factory\\(void\\) {\\\\n    // zone mask: 所有受 VideoAmbLi 控制的 zone \\(TODO: 精确化\\)\\\\n    ZoneMask mask = zm_group_all_zones\\(\\);|Effect *video_ambient_factory\\(void\\) {\\\\n    ZoneMask mask; zm_clear\\(\\\\&mask\\);\\\\n    // 将 6 个区域列表的并集作为 zone mask\\\\n    for \\(int i = 0; i < \\(int\\)VA_LEN\\(g_video_fl_zones\\); i++\\) zm_set\\(\\\\&mask, g_video_fl_zones[i]\\);\\\\n    for \\(int i = 0; i < \\(int\\)VA_LEN\\(g_video_fr_zones\\); i++\\) zm_set\\(\\\\&mask, g_video_fr_zones[i]\\);\\\\n    for \\(int i = 0; i < \\(int\\)VA_LEN\\(g_video_ml_zones\\); i++\\) zm_set\\(\\\\&mask, g_video_ml_zones[i]\\);\\\\n    for \\(int i = 0; i < \\(int\\)VA_LEN\\(g_video_mr_zones\\); i++\\) zm_set\\(\\\\&mask, g_video_mr_zones[i]\\);\\\\n    for \\(int i = 0; i < \\(int\\)VA_LEN\\(g_video_rl_zones\\); i++\\) zm_set\\(\\\\&mask, g_video_rl_zones[i]\\);\\\\n    for \\(int i = 0; i < \\(int\\)VA_LEN\\(g_video_rr_zones\\); i++\\) zm_set\\(\\\\&mask, g_video_rr_zones[i]\\);|' src/effects/video_ambient.c)",
-      "Bash(gcc -O2 -Wall -Iinclude -Isrc -c src/effects/video_ambient.c)"
+      "Bash(gcc -O2 -Wall -Iinclude -Isrc -c src/effects/video_ambient.c)",
+      "Bash(sed -i '/Effect \\\\*theme_music_factory/a ZoneMask theme_music_active_mask\\(void\\);' src/effects/theme_music.h)",
+      "Bash(sed -i 's/Effect \\\\*theme_music_factory/ZoneMask theme_music_active_mask\\(void\\);\\\\nEffect *theme_music_factory/' src/effects/theme_music.h)",
+      "Bash(sed -i '0,/ZoneMask theme_music_active_mask\\(void\\);/{/ZoneMask theme_music_active_mask\\(void\\);/d}' src/effects/theme_music.h)",
+      "Bash(sed -i '/pv.theme = theme;/,/}/{s/    if \\(theme == 6\\) em_set_mask.*//}' src/commands/processor.c)",
+      "Bash(sed -i '/^    }$/{ *)",
+      "Bash(sed -n '88,100p' src/commands/processor.c)",
+      "Bash(gcc -O2 -Wall -Iinclude -Isrc -c src/commands/processor.c)",
+      "Bash(sed -i '/#include \"effects\\\\/video_ambient.h\"/d; /#include \"effects\\\\/theme_music.h\"/d' src/commands/processor.c)",
+      "Bash(sed -i '/#include \"manager\\\\/effect_manager.h\"/a\\\\#include \"effects/video_ambient.h\"' src/commands/processor.c)",
+      "Bash(sed -i '/void \\(\\\\*tick\\)/d' src/effects/effect.h)",
+      "Bash(sed -i '/动态 mask.*非 IDLE/,/e->tick\\(e, now\\);/{/e->tick\\(e, now\\);/d; /动态 mask/d; /for.*effect_count/d; /Effect \\\\*e = effects/d; /if \\(e && e->state/d}' src/manager/effect_manager.c)",
+      "Bash(sed -i '/^$/N;/^\\\\n$/d' src/manager/effect_manager.c)",
+      "Bash(sed -i '/e->tick.*=.*tick;/d; /static void tm_tick/,/^$/d; /static void va_tick/,/^$/d' src/effects/theme_music.c src/effects/video_ambient.c)",
+      "Bash(sed -i '/^\\\\/\\\\/ 兼容旧接口/,/^}/d' src/can/parser.c)",
+      "Bash(gcc -O2 -Wall -Iinclude -Isrc -c src/can/parser.c)",
+      "Bash(sed -i 's|#include \"effects/theme_music.h\"|#include \"effects/theme_music.h\"\\\\n#include \"effects/nap.h\"|' src/main.c)",
+      "Bash(sed -i 's|em_register_factory\\(\"theme_music\",      theme_music_factory\\);|em_register_factory\\(\"theme_music\",      theme_music_factory\\);\\\\n    em_register_factory\\(\"nap\",              nap_factory\\);|' src/main.c)"
     ]
   }
 }

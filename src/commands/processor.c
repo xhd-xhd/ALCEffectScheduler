@@ -3,6 +3,7 @@
 #include "can_frames.h"
 #include "manager/effect_manager.h"
 #include "effects/video_ambient.h"
+#include "effects/theme_music.h"
 
 // ============================================================================
 // 命令处理器 — 读 g_rx_frame → 边沿检测 → EffectCommand
@@ -39,7 +40,18 @@ void commands_init(void) {
     memset(&pv, 0, sizeof(pv));
 }
 
-// ---- 主题名映射 ------------------------------------------------------------
+// ---- 小憩阶段映射 --------------------------------------------------------
+static const char *nap_name(uint8_t n) {
+    switch (n) {
+    case 1:  return "nap_prepare1";
+    case 2:  return "nap_prepare2";
+    case 3:  return "nap_sleep";
+    case 4:  return "nap_wake";
+    default: return NULL;
+    }
+}
+
+// ---- 主题名映射 ------------------------------------------------------------ ------------------------------------------------------------
 static const char *theme_name(uint8_t t) {
     switch (t) {
     case 0:  return "theme_off";
@@ -90,31 +102,29 @@ void commands_tick(TimeMs now) {
         push_cmd(CMD_ACTIVATE,   theme_name(theme),    now);
         pv.theme = theme;
     }
+    if (theme == 6) em_set_mask("theme_music", theme_music_active_mask());
 
-    // L4 小憩模式
+    // L4 小憩模式 (4 个阶段，值切换时换效果)
     if (nap != pv.nap) {
-        push_cmd(nap ? CMD_ACTIVATE : CMD_DEACTIVATE, "nap", now);
+        push_cmd(CMD_DEACTIVATE, nap_name(pv.nap), now);
+        push_cmd(CMD_ACTIVATE,   nap_name(nap),    now);
         pv.nap = nap;
     }
-
     // L5 启动动画
     if (start != pv.start) {
         push_cmd(start ? CMD_ACTIVATE : CMD_DEACTIVATE, "start_motion", now);
         pv.start = start;
     }
-
     // L6 迎宾
     if (welcome != pv.welcome) {
         push_cmd(welcome ? CMD_ACTIVATE : CMD_DEACTIVATE, "welcome", now);
         pv.welcome = welcome;
     }
-
     // L7 驾驶模式
     if (driving != pv.driving) {
         push_cmd(driving ? CMD_ACTIVATE : CMD_DEACTIVATE, "driving", now);
         pv.driving = driving;
     }
-
     // L8 空调联动
     {
         uint8_t ac_on  = fl_ac || fr_ac || rl_ac || rr_ac;
@@ -124,7 +134,6 @@ void commands_tick(TimeMs now) {
         if (ac_on != ac_was)
             push_cmd(ac_on ? CMD_ACTIVATE : CMD_DEACTIVATE, "temperature", now);
     }
-
     // L9 语音交互
     {
         uint8_t voice_on  = (voice == 2 || voice == 4 || voice == 7);
@@ -133,7 +142,6 @@ void commands_tick(TimeMs now) {
         if (voice_on != voice_was)
             push_cmd(voice_on ? CMD_ACTIVATE : CMD_DEACTIVATE, "voice", now);
     }
-
     // L10 开门预警
     {
         uint8_t door_on  = fl_door || fr_door || rl_door || rr_door;
@@ -143,7 +151,6 @@ void commands_tick(TimeMs now) {
         if (door_on != door_was)
             push_cmd(door_on ? CMD_ACTIVATE : CMD_DEACTIVATE, "door_warn", now);
     }
-
     // L11 后方来车
     {
         uint8_t rear_on  = fl_rear || fr_rear || rl_rear || rr_rear;
@@ -153,7 +160,6 @@ void commands_tick(TimeMs now) {
         if (rear_on != rear_was)
             push_cmd(rear_on ? CMD_ACTIVATE : CMD_DEACTIVATE, "rear_alert", now);
     }
-
     // L12 施罗德使能
     {
         uint8_t tw = g_rx_frame.canfd_0x2cf.VIU_AL_TwetterLampEnable;
@@ -162,7 +168,6 @@ void commands_tick(TimeMs now) {
             pv.tweeter = tw;
         }
     }
-
     // L3 视频氛围 光随影动 (动态 mask)
     {
         ZoneMask va_mask = video_ambient_active_mask();
@@ -171,7 +176,6 @@ void commands_tick(TimeMs now) {
             push_cmd(va_on ? CMD_ACTIVATE : CMD_DEACTIVATE, "video_ambient", now);
             pv.video_amb = va_on;
         }
-        if (va_on) em_set_mask("video_ambient", va_mask);
     }
 }
 

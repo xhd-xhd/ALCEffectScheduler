@@ -48,24 +48,3 @@ int can_handle_frame(const uint8_t frame[64]) {
     }
 }
 
-// 兼容旧接口 — 收到帧后直接产生 Event
-int can_parse_frame(const uint8_t frame[64], Event *out_events, int max_out) {
-    if (max_out < 1) return 0;
-    if (!can_handle_frame(frame)) return 0;
-
-    memset(out_events, 0, sizeof(Event));
-
-    switch (g_rx_frame.id) {
-    case 0x2CF:
-        out_events[0].type = EVT_ALCTRL;
-        return 1;
-    case 0x1E9: case 0x1EA: case 0x1EB: case 0x1EC: case 0x1ED:
-        out_events[0].type = EVT_MUSIC_FOLLOW;
-        return 1;
-    case 0x1EE:
-        out_events[0].type = EVT_MUSIC_TWEETER;
-        return 1;
-    default:
-        return 0;
-    }
-}

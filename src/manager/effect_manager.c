@@ -77,6 +77,7 @@ void em_update_all(TimeMs now, LedOutput *out) {
     zm_clear(&occupied);
 
     // 按优先级顺序遍历，每个效果只渲染没被占的 zone
+
     for (int i = 0; i < effect_count; i++) {
         Effect *e = effects[i];
         if (!e || e->state == S_IDLE) continue;
@@ -107,8 +108,6 @@ void em_update_all(TimeMs now, LedOutput *out) {
         }
     }
 }
-
-
 // 运行时动态更新效果的 zone mask（用于 video_ambient 等按区域部分激活的效果）
 void em_set_mask(const char *name, ZoneMask mask) {
     for (int i = 0; i < effect_count; i++) {

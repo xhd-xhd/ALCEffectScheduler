@@ -17,6 +17,10 @@
 #include "effects/theme_custom.h"
 #include "effects/theme_effect.h"
 #include "effects/theme_music.h"
+#include "effects/nap_prepare1.h"
+#include "effects/nap_prepare2.h"
+#include "effects/nap_sleep.h"
+#include "effects/nap_wake.h"
 #include "effects/tweeter_off.h"
 #include "effects/video_ambient.h"
 
@@ -45,6 +49,10 @@ int main(void) {
     em_register_factory("theme_effect3",    theme_effect3_factory);
     em_register_factory("theme_effect4",    theme_effect4_factory);
     em_register_factory("theme_music",      theme_music_factory);
+    em_register_factory("nap_prepare1",     nap_prepare1_factory);
+    em_register_factory("nap_prepare2",     nap_prepare2_factory);
+    em_register_factory("nap_sleep",        nap_sleep_factory);
+    em_register_factory("nap_wake",         nap_wake_factory);
     em_register_factory("tweeter_off",      tweeter_off_factory);
     em_register_factory("video_ambient",    video_ambient_factory);
 
